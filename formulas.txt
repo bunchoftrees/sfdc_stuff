@@ -1,0 +1,9 @@
+IF (!ISBLANK(SBQQRevisedSubscription),'Applied Amendment')&
+IF (!ISBLANK(SBQQTerminatedDate),'Terminated')&
+IF (AND(!ISBLANK(ActivationDate),!ISBLANK(NetsuiteStartDate)),'Signed, Pending Activation')&
+IF (AND(SBQQStartDate <= TODAY),(HSTMEndDate>=TODAY),(OR(!ISBLANK(ActivationDate)),(!ISBLANK(NetsuiteStartDate))),'Active')&
+IF (AND(SBQQStartDate > TODAY),(OR(!ISBLANK(ActivationDate)),(!ISBLANK(NetsuiteStartDate))),'Activated, Future Start')&
+IF ((HTSMEndDate<TODAY), 'Expired')
+
+
+IF (AND(!ISBLANK( Name ),!ISBLANK( Active__c )),'SomeString;','')
