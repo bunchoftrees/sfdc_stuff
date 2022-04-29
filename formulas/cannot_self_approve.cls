@@ -9,3 +9,7 @@ ISPICKVAL(ChangeApproval__c, "Approved - Direct") ||
 ISPICKVAL(ChangeApproval__c, "Approved - Deploy"),
 (OwnerId = $User.Id) ||
 (Contact_First_Name__c = $User.User_Full_Name__c))
+
+// Error Message: 
+// Cannot self-approve change requests.
+// Consult another admin for change approval.
